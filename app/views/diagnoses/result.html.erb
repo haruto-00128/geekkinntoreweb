@@ -1,0 +1,17 @@
+<h2>診断結果</h2>
+
+<%= form_with url: save_diagnoses_path, method: :post, data: { turbo: false } do %>
+
+  <% @results.each do |r| %>
+    <div>
+      <label>
+        <%= check_box_tag "selected_results[]", r %>
+        <%= r %>
+      </label>
+    </div>
+  <% end %>
+
+  <%= submit_tag "選んだ結果を保存する", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "マイページへ", user_path(current_user) %>

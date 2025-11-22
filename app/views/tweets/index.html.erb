@@ -1,0 +1,33 @@
+Enjoy programing!
+<h1>GeekTwitter</h1>
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<%= link_to "診断する", new_diagnosis_path %>
+<h3>投稿を検索</h3>
+ <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+   <%= text_field_tag :search %>
+   <%= submit_tag '検索する'  %>
+<% end %>
+<%= link_to "新規投稿ページへ", new_tweet_path %>
+<div class="tweets-container">
+<% if user_signed_in? %>
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+  <% @tweets.each do |t| %>
+    <div class="tweet">
+      <% if t.image.attached? %>
+            <%= image_tag t.image, size: '250x200'%>
+      <% if t.user.image.attached? %>
+            <%= image_tag  t.user.image, size: '250x200'%>
+  <% end %>
+        <% end %>
+      <%=  video_tag t.video_url ,:controls => true if t.video?%>
+      <%= t.user.email %>
+      <%= t.body %>
+      <%= t.created_at %>
+      <%= link_to "詳細へ", tweet_path(t.id) %>
+      <%= link_to "編集する", edit_tweet_path(t.id) %>
+      <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+      <%= link_to t.user.name, user_path(t.user.id) %>
+    </div>
+  <% end %>
+</div>

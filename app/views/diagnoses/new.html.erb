@@ -1,0 +1,26 @@
+<h1>Diagnoses#new</h1>
+<p>Find me in app/views/diagnoses/new.html.erb</p>
+<h2>トレーニング診断</h2>
+
+<%= form_with url: diagnoses_path,
+              scope: :diagnosis,
+              method: :post,
+              data: { turbo: false } do |f| %>
+
+  <div>
+    <label>時間</label>
+    <%= f.select :time, ["長時間（30分程度）","短時間（10分程度）"] %>
+  </div>
+
+  <div>
+    <label>負荷</label>
+    <%= f.select :load, ["重い","軽い"] %>
+  </div>
+
+  <div>
+    <label>部位</label>
+    <%= f.select :part, ["胸","背中","腕","肩","足"] %>
+  </div>
+
+  <%= f.submit "診断する" %>
+<% end %>
