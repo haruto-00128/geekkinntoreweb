@@ -1,5 +1,4 @@
-Enjoy programing!
-<h1>GeekTwitter</h1>
+<h1>おかえりなさいトレーニーユーザーさん</h1>
 <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
 <%= link_to "診断する", new_diagnosis_path %>
 <h3>投稿を検索</h3>
@@ -8,26 +7,66 @@ Enjoy programing!
    <%= submit_tag '検索する'  %>
 <% end %>
 <%= link_to "新規投稿ページへ", new_tweet_path %>
+
 <div class="tweets-container">
+
 <% if user_signed_in? %>
   <%= link_to "マイページへ", user_path(current_user.id) %>
 <% end %>
-  <% @tweets.each do |t| %>
-    <div class="tweet">
-      <% if t.image.attached? %>
-            <%= image_tag t.image, size: '250x200'%>
-      <% if t.user.image.attached? %>
-            <%= image_tag  t.user.image, size: '250x200'%>
+
+<% @tweets.each do |t| %>
+  <div class="tweet">
+
+    <!-- 投稿画像 -->
+    <% if t.image.attached? %>
+      <%= image_tag t.image, size: '250x200' %>
+    <% end %>
+
+    <!-- ユーザーアイコン -->
+    <% if t.user.image.attached? %>
+      <%= image_tag t.user.image, size: '250x200' %>
+    <% end %>
+
+    <div class="main-box">
+      <div class="left-container"><%= t.body %></div>
+      <div class="right-container">
+        <%= video_tag t.video_url, controls: true if t.video? %>
+        <%= t.user.email %>
+        <%= t.body %>
+
+        <% if user_signed_in? %>
+  <% if current_user.already_liked?(t) %>
+
+    <%= button_to tweet_like_path(t, current_user.likes.find_by(tweet_id: t.id)),
+          method: :delete do %>
+      <p>いいねを取り消す</p><%= t.likes.count %>
+    <% end %>
+
+  <% else %>
+
+    <%= button_to tweet_likes_path(t),
+          method: :post do %>
+      <p>いいね</p><%= t.likes.count %>
+    <% end %>
+
   <% end %>
-        <% end %>
-      <%=  video_tag t.video_url ,:controls => true if t.video?%>
-      <%= t.user.email %>
-      <%= t.body %>
-      <%= t.created_at %>
-      <%= link_to "詳細へ", tweet_path(t.id) %>
-      <%= link_to "編集する", edit_tweet_path(t.id) %>
-      <%= button_to "削除する", tweet_path(t.id), method: :delete %>
-      <%= link_to t.user.name, user_path(t.user.id) %>
+
+<% else %>
+  <p>いいねの数 = </p><%= t.likes.count %>
+<% end %>
+
+        <%= t.created_at %>
+        <%= link_to "詳細へ", tweet_path(t.id) %>
+        <%= link_to "編集する", edit_tweet_path(t.id) %>
+        <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+        <%= link_to t.user.name, user_path(t.user.id) %>
+
+      </div>
     </div>
-  <% end %>
+
+    <p class="time"><%= t.created_at %></p>
+
+  </div>
+<% end %>
+
 </div>
