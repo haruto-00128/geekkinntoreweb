@@ -16,6 +16,7 @@ resources :posts
 
  resources :tweets do
     resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create]
   end
 
 resources :diagnoses, only: [:new, :create, :show] do
