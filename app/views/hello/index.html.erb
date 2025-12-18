@@ -1,5 +1,9 @@
 <%= link_to "ログイン", tweets_path %>
 <%= link_to "新規登録", new_user_registration_path %>
+<div class="hero-section">
+  <h2>最適なトレーニングと共に</h2>
+  <p>あなたの日常にフィットするフィットネスを見つけよう</p>
+
 <html lang="ja">
   <head>
     <meta charset="utf-8">
@@ -7,18 +11,184 @@
     <!--変更した部分は以下の一行！！-->
     <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 
+<div class="features-section">
+  <h3>主な機能</h3>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="icon">📈</span>
+      <h4>診断機能</h4>
+      <p>最適なプランを提案</p>
+    </div>
+  
+    <div class="feature-card">
+      <span class="icon">📅</span>
+      <h4>カレンダー管理</h4>
+      <p>予定と記録を簡単管理</p>
+    </div>
+
+    <div class="feature-card">
+      <span class="icon">👥</span>
+      <h4>コミュニティ</h4>
+      <p>仲間とメニュー共有</p>
+    </div>
+  </div>
+</div>
+
+<div class="training-section">
+  <h3>トレーニング項目</h3>
+
+  <!-- ▼ 胸 -->
+  <h4 class="category-title">胸</h4>
+  
+  <div class="training-grid">
+  <div class="training-card">
+    <img src="" alt="">
+    <h5>プッシュアップ</h5>
+    <span class="level low">初級</span>
+    <p>自重で行う胸部トレーニング。まずはここから始めよう。</p>
+  </div>
+
+  <div class="training-card">
+    <img src="" alt="">
+    <h5>ベンチプレス</h5>
+    <span class="level mid">中級</span>
+    <p>胸部を効果的に鍛えられるトレーニング。重量を多く扱えて、ボディメイクにぴったり。</p>
+  </div>
+
+  <div class="training-card">
+    <img src="" alt="">
+    <h5>ナロープレス</h5>
+    <span class="level mid">中級</span>
+    <p>手幅を狭くしたプレスで主に大胸筋と上腕三頭筋を鍛える。肘のケガに注意。</p>
+  </div>
+
+  <div class="training-card">
+    <img src="" alt="">
+    <h5>ダンベルフライ</h5>
+    <span class="level mid">中級</span>
+    <p>ダンベルを使った大胸筋トレーニング種目。ストレッチかかるのでベンチプレスとはまた別の刺激</p>
+  </div>
+
+</div>
+
+  <section class="training-section">
+  <h3 class="category-title">腕</h3>
+
+  <div class="training-grid">
+    <div class="training-card">
+      <img src="">
+      <span class="level low">初級</span>
+      <h5>ダンベルカール</h5>
+      <p>上腕二頭筋を鍛える基本種目。</p>
+    </div>
+
+    <div class="training-card">
+      <img src="">
+      <span class="level mid">中級</span>
+      <h5>バーベルカール</h5>
+      <p>バーベルを使って上腕二頭筋を鍛えます。重量が扱えるので筋肥大に効果的です。</p>
+    </div>
+
+    <div class="training-card">
+      <img src="">
+      <span class="level low">初級</span>
+      <h5>ケーブルプレスダウン</h5>
+      <p>上腕三頭筋を集中的に刺激します。</p>
+    </div>
+
+    <div class="training-card">
+      <img src="">
+      <span class="level mid">中級</span>
+      <h5>フレンチプレス</h5>
+      <p>ダンベルを頭上に上げ、肘を曲げ、上下させることで上腕三頭筋を集中的に刺激します。</p>
+    </div>
+  </div>
+</section>
+
+  <section class="training-section">
+  <h3 class="category-title">背中</h3>
+
+  <div class="training-grid">
+    <div class="training-card">
+      <img src="">
+      <span class="level mid">中級</span>
+      <h5>ワンハンドダンベルロー</h5>
+      <p>広背筋を意識しやすい背中トレ。ダンベルを引く動作を斜め後ろにすると背中に入りやすい。</p>
+    </div>
+
+    <div class="training-card">
+      <img src="">
+      <span class="level mid">中級</span>
+      <h5>デッドリフト</h5>
+      <p>背中から下半身まで同時に鍛える。重量を扱えるためオススメ</p>
+    </div>
+
+    <div class="training-card">
+      <img src="">
+      <span class="level low">初級</span>
+      <h5>懸垂</h5>
+      <p>基礎であり、応用も可能な万能種目。背中を鍛えるならまずはこれ</p>
+    </div>
+
+    <div class="training-card">
+      <img src="">
+      <span class="level high">上級</span>
+      <h5>ベントオーバーロー</h5>
+      <p>高難易度の背中トレーニング。重量を扱えて、凹凸のあるかっこいい背中を作る。フォームを意識してケガを防ごう</p>
+    </div>
+  </div>
+</section>
+
+ <section class="training-section">
+  <h3 class="category-title">背中</h3>
+
+  <section class="training-section">
+  <h3 class="category-title">肩</h3>
+
+  <div class="training-grid">
+    <div class="training-card">
+      <img src="">
+      <span class="level mid">中級</span>
+      <h5>ダンベルショルダープレス</h5>
+      <p>三角筋全体を鍛える定番種目。</p>
+    </div>
+
+    <div class="training-card">
+      <img src="">
+      <span class="level low">初級</span>
+      <h5>ダンベルサイドレイズ</h5>
+      <p>肩幅を広く見せるトレーニング。</p>
+    </div>
+  </div>
+</section>
+
+ <section class="training-section">
+  <h3 class="category-title">脚</h3>
+
+  <div class="training-grid">
+    <div class="training-card">
+      <img src="">
+      <span class="level mid">中級</span>
+      <h5>ダンベルスクワット</h5>
+      <p>下半身をバランスよく強化。</p>
+    </div>
+
+    <div class="training-card">
+      <img src="">
+      <span class="level low">初級</span>
+      <h5>ダンベルランジ</h5>
+      <p>脚と体幹を同時に鍛えられる。</p>
+    </div>
+  </div>
+</section>
+
+   
 <body>
 
     <header>
 
     </header>
-
-  <div class="first-block">
-  </div>
-  <div class="second-block">
-  </div>
-  <div class="third-block">
-  </div>
 
   <footer>
 

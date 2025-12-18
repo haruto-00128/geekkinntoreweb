@@ -39,22 +39,150 @@ header{
   background-color: #000;
 }
 
-.first-block {
-  height: 500px;
-  background-color: #ddd;
-}
-
-.second-block {
-  height: 500px;
-  background-color: #f0f0f0;
-}
-
-.third-block {
-  height: 500px;
-  background-color: #f05f40;
-}
-
 footer{
   height: 50px;
   background-color: #000;
+}
+
+body {
+  background: #1d1d1f;
+  color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- HERO ---------- */
+.hero-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #1f1f22, #1a1a1d);
+}
+
+.hero-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 12px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background: #ff6b1a;
+  color: #fff;
+}
+
+.btn-secondary {
+  border: 2px solid #ff6b1a;
+  color: #ff6b1a;
+}
+
+/* ---------- FEATURES ---------- */
+.features-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.feature-card {
+  background: #222;
+  width: 260px;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.feature-card .icon {
+  font-size: 30px;
+  color: #ff6b1a;
+}
+
+.feature-card h4 {
+  margin-top: 10px;
+}
+
+.feature-card p {
+  color: #bbb;
+}
+
+/* ---------- TRAININGS ---------- */
+.training-section {
+  padding: 40px 20px;
+}
+
+.category-title {
+  font-size: 22px;
+  margin: 20px 0;
+}
+
+.training-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.training-card {
+  background: #222;
+  border-radius: 12px;
+  padding-bottom: 15px;
+  overflow: hidden;
+}
+
+.training-card img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #333;
+}
+
+.training-card h5 {
+  padding: 10px 15px 0;
+  font-size: 18px;
+}
+
+.training-card p {
+  padding: 0 15px 10px;
+  color: #bbb;
+}
+
+.level {
+  display: inline-block;
+  margin: 5px 15px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.low {
+  background: #ff8b32;
+}
+
+.mid {
+  background: #ff6b1a;
+}
+
+.high {
+  background: #ff3b1a;
 }
