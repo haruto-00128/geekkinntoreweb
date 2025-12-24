@@ -69,7 +69,7 @@ gem 'dotenv-rails'
 gem 'cloudinary'
 gem 'activestorage-cloudinary-service'
 gem 'carrierwave', '~> 1.3'
-gem 'simple_calendar', '~> 2.0'
+gem 'simple_calendar', '~> 3.1'
 
 group :production do
   gem "pg"
